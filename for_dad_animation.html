@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Dad ❤️</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body {
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle at center, #35104f 0%, #160b2d 45%, #070313 100%);
+    color: white;
+  }
+
+  .scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+
+  .stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 1.5px),
+      radial-gradient(circle, rgba(255,180,220,.7) 1px, transparent 1.5px);
+    background-size: 70px 70px, 110px 110px;
+    background-position: 10px 20px, 35px 60px;
+    opacity: .35;
+    animation: drift 12s linear infinite;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    width: min(90vw, 700px);
+  }
+
+  .hello {
+    font-size: clamp(3.5rem, 11vw, 7rem);
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-shadow: 0 0 25px rgba(255,255,255,.45);
+    animation: hello 3s ease-in-out forwards;
+  }
+
+  .heart-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    animation: heartIn 2s 3s cubic-bezier(.2,.8,.2,1) forwards;
+  }
+
+  .heart {
+    width: clamp(110px, 25vw, 190px);
+    height: clamp(110px, 25vw, 190px);
+    background: #ff2d68;
+    transform: rotate(-45deg);
+    border-radius: 18px;
+    box-shadow:
+      0 0 25px #ff2d68,
+      0 0 70px rgba(255,45,104,.8),
+      0 0 130px rgba(255,45,104,.35);
+    animation: beat 1.15s 5s ease-in-out infinite;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ff2d68;
+    border-radius: 50%;
+  }
+
+  .heart::before { top: -50%; left: 0; }
+  .heart::after { top: 0; left: 50%; }
+
+  .message {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -35%);
+    width: 100%;
+    opacity: 0;
+    z-index: 3;
+    animation: messageIn 2s 5s ease forwards;
+  }
+
+  .message h1 {
+    margin: 0;
+    font-size: clamp(2.4rem, 8vw, 5.5rem);
+    line-height: 1;
+    font-weight: 900;
+    color: #fff;
+    text-shadow:
+      0 0 12px #ff5d91,
+      0 0 35px #ff2d68;
+  }
+
+  .message p {
+    margin: 18px 0 0;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: #ffd8e4;
+    letter-spacing: .12em;
+  }
+
+  .sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .sparkles span {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkle 2.5s infinite;
+  }
+
+  .sparkles span:nth-child(1){left:15%;top:30%;animation-delay:5.2s}
+  .sparkles span:nth-child(2){left:80%;top:25%;animation-delay:5.6s}
+  .sparkles span:nth-child(3){left:25%;top:75%;animation-delay:6s}
+  .sparkles span:nth-child(4){left:72%;top:70%;animation-delay:6.4s}
+  .sparkles span:nth-child(5){left:50%;top:15%;animation-delay:6.8s}
+  .sparkles span:nth-child(6){left:90%;top:55%;animation-delay:7.2s}
+
+  @keyframes hello {
+    0% { opacity: 0; transform: scale(.6) translateY(30px); filter: blur(12px); }
+    20% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+    75% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.25); filter: blur(8px); }
+  }
+
+  @keyframes heartIn {
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0) rotate(-20deg); }
+    60% { opacity: 1; transform: translate(-50%, -50%) scale(1.15) rotate(0); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0); }
+  }
+
+  @keyframes beat {
+    0%, 100% { transform: rotate(-45deg) scale(1); }
+    15% { transform: rotate(-45deg) scale(1.12); }
+    30% { transform: rotate(-45deg) scale(1); }
+    45% { transform: rotate(-45deg) scale(1.08); }
+  }
+
+  @keyframes messageIn {
+    from { opacity: 0; transform: translate(-50%, -35%) scale(.8); filter: blur(10px); }
+    to { opacity: 1; transform: translate(-50%, -35%) scale(1); filter: blur(0); }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(.5); }
+    50% { opacity: 1; transform: scale(2); }
+  }
+
+  @keyframes drift {
+    from { transform: translateY(0); }
+    to { transform: translateY(-70px); }
+  }
+</style>
+</head>
+<body>
+  <div class="scene">
+    <div class="stars"></div>
+
+    <div class="content">
+      <div class="hello">Hello 👋</div>
+
+      <div class="heart-wrap">
+        <div class="heart"></div>
+      </div>
+
+      <div class="message">
+        <h1>I Love You, Dad ❤️</h1>
+        <p>You mean the world to me.</p>
+      </div>
+    </div>
+
+    <div class="sparkles">
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</body>
+</html>
